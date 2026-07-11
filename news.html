@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>你的名字 — News</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<div class="shell">
+  <nav class="site-nav" id="siteNav">
+    <div>
+      <div class="brand">
+        <a href="index.html">
+          <span class="brand-name">你的名字</span>
+          <span class="brand-role">PhD Researcher · 研究方向</span>
+        </a>
+        <button class="nav-toggle" aria-expanded="false" aria-controls="navBody">Menu</button>
+      </div>
+      <div class="nav-body" id="navBody">
+        <div>
+          <ul class="nav-links">
+            <li><a href="index.html"><span class="nav-index">01</span>About</a></li>
+            <li><a href="portfolio.html"><span class="nav-index">02</span>Portfolio</a></li>
+            <li><a href="publications.html"><span class="nav-index">03</span>Publications</a></li>
+            <li><a href="news.html" aria-current="page"><span class="nav-index">04</span>News</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="nav-foot">
+      <div><a href="mailto:you@example.com">you@example.com</a></div>
+      <div><a href="https://github.com/yourname" target="_blank" rel="noopener">GitHub</a></div>
+      <div><a href="#" target="_blank" rel="noopener">CV (PDF)</a></div>
+    </div>
+  </nav>
+
+  <main>
+    <section class="hero" style="padding-top:2vh;">
+      <span class="hero-eyebrow">News</span>
+      <h1 style="max-width:none; font-size:clamp(1.8rem,4vw,2.6rem);">动态</h1>
+      <p class="hero-lede">简短记录：论文被接收、会议报告、获奖、答辩等。</p>
+    </section>
+
+    <div class="news-entry">
+      <span class="news-date">2026.06</span>
+      <span>论文《替换为标题》被 XX 会议接收。</span>
+    </div>
+    <div class="news-entry">
+      <span class="news-date">2026.03</span>
+      <span>在 XX 会议上做口头报告。</span>
+    </div>
+    <div class="news-entry">
+      <span class="news-date">2025.11</span>
+      <span>替换为你的动态内容。</span>
+    </div>
+
+    <footer class="site-footer">
+      © <span id="year"></span> 你的名字 · 本站由 GitHub Pages 免费托管
+    </footer>
+  </main>
+</div>
+
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>

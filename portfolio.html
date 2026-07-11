@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>你的名字 — Portfolio</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<div class="shell">
+
+  <nav class="site-nav" id="siteNav">
+    <div>
+      <div class="brand">
+        <a href="index.html">
+          <span class="brand-name">你的名字</span>
+          <span class="brand-role">PhD Researcher · 研究方向</span>
+        </a>
+        <button class="nav-toggle" aria-expanded="false" aria-controls="navBody">Menu</button>
+      </div>
+      <div class="nav-body" id="navBody">
+        <div>
+          <ul class="nav-links">
+            <li><a href="index.html"><span class="nav-index">01</span>About</a></li>
+            <li><a href="portfolio.html" aria-current="page"><span class="nav-index">02</span>Portfolio</a></li>
+            <li><a href="publications.html"><span class="nav-index">03</span>Publications</a></li>
+            <li><a href="news.html"><span class="nav-index">04</span>News</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="nav-foot">
+      <div><a href="mailto:you@example.com">you@example.com</a></div>
+      <div><a href="https://github.com/yourname" target="_blank" rel="noopener">GitHub</a></div>
+      <div><a href="#" target="_blank" rel="noopener">CV (PDF)</a></div>
+    </div>
+  </nav>
+
+  <main>
+    <section class="hero" style="padding-top:2vh;">
+      <span class="hero-eyebrow">Portfolio</span>
+      <h1 style="max-width:none; font-size:clamp(1.8rem,4vw,2.6rem);">作品集</h1>
+      <p class="hero-lede">
+        按项目分类展示的作品索引。将下方每张卡片替换为你自己的项目缩略图，
+        鼠标悬停会显示项目名称与年份；点击进入项目详情页
+        （详情页模板见 <code>project-example.html</code>，复制一份即可新建新项目）。
+      </p>
+    </section>
+
+    <div class="portfolio-grid">
+
+      <a class="project-card" href="project-example.html">
+        <div class="thumb">[ 项目缩略图 01 ]</div>
+        <div class="card-meta">
+          <span class="idx">Project 01</span>
+          <div class="title">示例项目名称</div>
+          <span class="year">2025 · Category</span>
+        </div>
+      </a>
+
+      <a class="project-card" href="project-example.html">
+        <div class="thumb">[ 项目缩略图 02 ]</div>
+        <div class="card-meta">
+          <span class="idx">Project 02</span>
+          <div class="title">替换为项目名称</div>
+          <span class="year">2024 · Category</span>
+        </div>
+      </a>
+
+      <a class="project-card" href="project-example.html">
+        <div class="thumb">[ 项目缩略图 03 ]</div>
+        <div class="card-meta">
+          <span class="idx">Project 03</span>
+          <div class="title">替换为项目名称</div>
+          <span class="year">2024 · Category</span>
+        </div>
+      </a>
+
+      <a class="project-card" href="project-example.html">
+        <div class="thumb">[ 项目缩略图 04 ]</div>
+        <div class="card-meta">
+          <span class="idx">Project 04</span>
+          <div class="title">替换为项目名称</div>
+          <span class="year">2023 · Category</span>
+        </div>
+      </a>
+
+      <a class="project-card" href="project-example.html">
+        <div class="thumb">[ 项目缩略图 05 ]</div>
+        <div class="card-meta">
+          <span class="idx">Project 05</span>
+          <div class="title">替换为项目名称</div>
+          <span class="year">2023 · Category</span>
+        </div>
+      </a>
+
+      <a class="project-card" href="project-example.html">
+        <div class="thumb">[ 项目缩略图 06 ]</div>
+        <div class="card-meta">
+          <span class="idx">Project 06</span>
+          <div class="title">替换为项目名称</div>
+          <span class="year">2022 · Category</span>
+        </div>
+      </a>
+
+    </div>
+
+    <footer class="site-footer">
+      © <span id="year"></span> 你的名字 · 本站由 GitHub Pages 免费托管
+    </footer>
+  </main>
+</div>
+
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>

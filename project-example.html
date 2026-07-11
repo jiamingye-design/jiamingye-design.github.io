@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>示例项目名称 — 你的名字</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+
+<!-- Lightbox 库（免费开源，对应 Lay Theme 的 Lightbox 功能） -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css">
+<!-- 轮播库（免费开源，对应 Lay Theme 的 Carousel 功能） -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+</head>
+<body>
+
+<div class="shell">
+
+  <nav class="site-nav" id="siteNav">
+    <div>
+      <div class="brand">
+        <a href="index.html">
+          <span class="brand-name">你的名字</span>
+          <span class="brand-role">PhD Researcher · 研究方向</span>
+        </a>
+        <button class="nav-toggle" aria-expanded="false" aria-controls="navBody">Menu</button>
+      </div>
+      <div class="nav-body" id="navBody">
+        <div>
+          <ul class="nav-links">
+            <li><a href="index.html"><span class="nav-index">01</span>About</a></li>
+            <li><a href="portfolio.html" aria-current="page"><span class="nav-index">02</span>Portfolio</a></li>
+            <li><a href="publications.html"><span class="nav-index">03</span>Publications</a></li>
+            <li><a href="news.html"><span class="nav-index">04</span>News</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="nav-foot">
+      <div><a href="mailto:you@example.com">you@example.com</a></div>
+      <div><a href="https://github.com/yourname" target="_blank" rel="noopener">GitHub</a></div>
+      <div><a href="#" target="_blank" rel="noopener">CV (PDF)</a></div>
+    </div>
+  </nav>
+
+  <main>
+
+    <div class="project-head">
+      <a class="back-link" href="portfolio.html">← 返回 Portfolio</a>
+      <h1>示例项目名称</h1>
+      <div class="project-meta-row">
+        <div><strong>Year</strong>2025</div>
+        <div><strong>Role</strong>Designer / Researcher</div>
+        <div><strong>Category</strong>Interactive Installation</div>
+        <div><strong>Tools</strong>Grasshopper · Python · Arduino</div>
+      </div>
+    </div>
+
+    <div class="project-body">
+      <p>
+        在这里写项目描述：研究问题、设计过程、方法与结果。可以分 2–3 段，
+        第一段讲背景与问题，第二段讲你的方法或设计策略，第三段讲结果或反思。
+        建议控制在 150–300 字左右，太长的文字放进下方可下载的 PDF 报告中。
+      </p>
+    </div>
+
+    <!-- ============ 图片画廊 + Lightbox（点击放大） ============ -->
+    <div class="gallery full">
+      <a class="g-item" href="https://picsum.photos/seed/proj1/1600/1000" data-glightbox="title: 图 01 · 总览">
+        [ 点击放大 · 替换为 assets/img/project-01/01.jpg ]
+      </a>
+      <a class="g-item" href="https://picsum.photos/seed/proj2/1200/900" data-glightbox="title: 图 02 · 细节">
+        [ 替换为你的图片 02 ]
+      </a>
+      <a class="g-item" href="https://picsum.photos/seed/proj3/1200/900" data-glightbox="title: 图 03 · 过程">
+        [ 替换为你的图片 03 ]
+      </a>
+    </div>
+
+    <!-- ============ PDF 链接（论文/图纸/报告） ============ -->
+    <a class="pdf-link" href="assets/pdf/project-example.pdf" target="_blank" rel="noopener">
+      ↓ 下载完整 PDF 报告 / 图纸
+    </a>
+
+    <!-- ============ 轮播（多张图或视频） ============ -->
+    <div class="carousel-wrap">
+      <div class="section-heading"><span class="idx">—</span><h2>过程记录 / Process</h2></div>
+      <div class="swiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide" style="background-image:url('https://picsum.photos/seed/p1/1200/700'); background-size:cover;"></div>
+          <div class="swiper-slide" style="background-image:url('https://picsum.photos/seed/p2/1200/700'); background-size:cover;"></div>
+          <div class="swiper-slide" style="background-image:url('https://picsum.photos/seed/p3/1200/700'); background-size:cover;"></div>
+          <div class="swiper-slide">[ 也可以放 MP4 / YouTube 视频，见下方 JS 注释 ]</div>
+        </div>
+        <div class="swiper-pagination"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+      </div>
+    </div>
+
+    <!-- ============ 悬停预览效果（对应 Lay Theme Image Hover） ============ -->
+    <section style="margin-bottom:56px;">
+      <div class="section-heading"><span class="idx">—</span><h2>相关项目（鼠标悬停预览）</h2></div>
+      <ul style="display:flex; flex-direction:column; gap:2px;">
+        <li style="border-bottom:1px solid var(--line); padding:14px 0;">
+          <a href="project-example.html" data-hover-preview="https://picsum.photos/seed/r1/440/320" style="font-family:var(--font-display); font-size:1.1rem;">
+            相关项目 A →
+          </a>
+        </li>
+        <li style="border-bottom:1px solid var(--line); padding:14px 0;">
+          <a href="project-example.html" data-hover-preview="https://picsum.photos/seed/r2/440/320" style="font-family:var(--font-display); font-size:1.1rem;">
+            相关项目 B →
+          </a>
+        </li>
+      </ul>
+    </section>
+
+    <div class="project-nav">
+      <a href="project-example.html">← Previous project</a>
+      <a href="portfolio.html">Index</a>
+      <a href="project-example.html">Next project →</a>
+    </div>
+
+    <footer class="site-footer">
+      © <span id="year"></span> 你的名字 · 本站由 GitHub Pages 免费托管
+    </footer>
+  </main>
+</div>
+
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+<script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>
