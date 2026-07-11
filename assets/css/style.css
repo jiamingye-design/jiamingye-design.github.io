@@ -4,12 +4,12 @@
    Fraunces (display) + Inter (body) + IBM Plex Mono (index/meta).
    ========================================================= */
 :root{
-  --paper:      #F3F1EA;
-  --paper-2:    #EAE6DA;
-  --ink:        #18170F;
-  --ink-soft:   #4A483E;
-  --muted:      #918C7C;
-  --line:       #DAD5C6;
+  --paper:      #FFFFFF;
+  --paper-2:    #F5F5F3;   /* subtle grey, only for placeholder blocks */
+  --ink:        #141414;
+  --ink-soft:   #55534A;
+  --muted:      #A3A099;
+  --line:       #ECEBE6;  /* kept very light; not used in the nav anymore */
   --accent:     #3E5A45;   /* moss green, used sparingly */
   --accent-soft:#E4E9E1;
 
@@ -17,8 +17,8 @@
   --font-body: "Inter", sans-serif;
   --font-mono: "IBM Plex Mono", monospace;
 
-  --nav-w: 240px;
   --gutter: clamp(20px, 4vw, 56px);
+  --nav-h: 96px;
 
   --ease: cubic-bezier(.22,.61,.36,1);
 }
@@ -58,128 +58,69 @@ ul{ margin: 0; padding: 0; list-style: none; }
 
 /* =========================================================
    LAYOUT SHELL
-   Left column = identity + nav (sticky on desktop).
-   Right column = page content.
+   No sidebar. A single small nav cluster floats in the
+   top-right corner; the page itself is full width, and
+   nothing below it carries a dividing line.
    ========================================================= */
-.shell{
-  display: grid;
-  grid-template-columns: var(--nav-w) 1fr;
-  min-height: 100vh;
-}
+.shell{ min-height: 100vh; }
 
 .site-nav{
-  position: sticky;
-  top: 0;
-  height: 100vh;
-  padding: var(--gutter) 28px;
-  border-right: 1px solid var(--line);
+  position: fixed;
+  top: var(--gutter);
+  right: var(--gutter);
+  z-index: 50;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  align-items: flex-end;
+  gap: 10px;
+  text-align: right;
 }
 
-.brand{ display:block; margin-bottom: 48px; }
-.brand-name{
-  font-family: var(--font-display);
-  font-size: 1.35rem;
-  line-height: 1.25;
-}
-.brand-role{
-  display:block;
-  margin-top: 6px;
+.brand{
   font-family: var(--font-mono);
-  font-size: 0.7rem;
-  letter-spacing: 0.04em;
-  color: var(--muted);
+  font-size: 0.72rem;
+  letter-spacing: .04em;
   text-transform: uppercase;
+  color: var(--ink);
 }
 
-.nav-links{ display:flex; flex-direction: column; gap: 14px; }
+.nav-links{
+  display:flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 4px 14px;
+}
 .nav-links a{
-  font-size: 0.95rem;
-  position: relative;
-  width: fit-content;
-  padding-bottom: 2px;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: .02em;
+  color: var(--ink-soft);
 }
-.nav-links a::after{
-  content:"";
-  position:absolute; left:0; bottom:0;
-  width:100%; height:1px;
-  background: currentColor;
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform .35s var(--ease);
-}
-.nav-links a:hover::after,
-.nav-links a[aria-current="page"]::after{ transform: scaleX(1); }
+.nav-links a:hover{ color: var(--accent); }
 .nav-links a[aria-current="page"]{ color: var(--accent); }
 
-.nav-index{
-  font-family: var(--font-mono);
-  font-size: 0.68rem;
-  color: var(--muted);
-  margin-right: 10px;
-}
-
-.nav-foot{
-  font-family: var(--font-mono);
-  font-size: 0.68rem;
-  color: var(--muted);
-  line-height: 1.7;
-}
-.nav-foot a{ border-bottom: 1px solid var(--line); }
-.nav-foot a:hover{ color: var(--accent); border-color: var(--accent); }
-
+.nav-index{ display:none; } /* index numbers dropped for the corner nav */
 .nav-toggle{ display: none; }
+.nav-foot{ display: none; } /* contact links now live in the page footer */
+.nav-body{ display:contents; }
 
-main{ padding: var(--gutter); max-width: 1180px; }
+main{
+  padding: calc(var(--gutter) + 56px) var(--gutter) var(--gutter);
+  max-width: 1180px;
+  margin: 0 auto;
+}
 
-/* Mobile nav */
-@media (max-width: 860px){
-  .shell{ grid-template-columns: 1fr; }
-  .site-nav{
-    position: sticky;
-    height: auto;
-    top: 0;
-    z-index: 50;
-    background: var(--paper);
-    border-right: none;
-    border-bottom: 1px solid var(--line);
-    padding: 16px var(--gutter);
-  }
-  .brand{ margin-bottom: 0; display:flex; align-items:center; justify-content:space-between; }
-  .nav-toggle{
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    background: none;
-    border: 1px solid var(--line);
-    border-radius: 999px;
-    padding: 6px 14px;
-    font-family: var(--font-mono);
-    font-size: 0.68rem;
-    letter-spacing: .04em;
-    color: var(--ink);
-    cursor: pointer;
-  }
-  .nav-body{
-    display: grid;
-    grid-template-rows: 0fr;
-    transition: grid-template-rows .35s var(--ease);
-  }
-  .nav-body > div{ overflow: hidden; }
-  .site-nav.is-open .nav-body{ grid-template-rows: 1fr; }
-  .nav-links{ padding-top: 24px; }
-  .nav-foot{ padding-top: 20px; }
-  main{ padding: 28px var(--gutter) 64px; }
+@media (max-width: 560px){
+  .site-nav{ max-width: 62%; }
+  .nav-links{ gap: 4px 10px; }
+  main{ padding: calc(var(--gutter) + 84px) var(--gutter) 48px; }
 }
 
 /* =========================================================
    HERO / ABOUT
    ========================================================= */
 .hero{
-  padding: 6vh 0 8vh;
-  border-bottom: 1px solid var(--line);
+  padding: 2vh 0 8vh;
   margin-bottom: 56px;
 }
 .hero-eyebrow{
@@ -250,12 +191,10 @@ main{ padding: var(--gutter); max-width: 1180px; }
 .portfolio-grid{
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 2px;
-  background: var(--line);
-  border: 1px solid var(--line);
+  gap: clamp(24px, 3vw, 48px) clamp(20px, 2.5vw, 40px);
 }
 @media (max-width: 860px){ .portfolio-grid{ grid-template-columns: repeat(2,1fr); } }
-@media (max-width: 560px){ .portfolio-grid{ grid-template-columns: 1fr; } }
+@media (max-width: 560px){ .portfolio-grid{ grid-template-columns: 1fr; gap: 40px; } }
 
 .project-card{
   position: relative;
@@ -451,4 +390,8 @@ main{ padding: var(--gutter); max-width: 1180px; }
   font-family: var(--font-mono);
   font-size: 0.7rem;
   color: var(--muted);
+  display:flex; flex-wrap:wrap; gap: 8px 20px;
+  justify-content: space-between;
 }
+.footer-links{ display:flex; flex-wrap:wrap; gap: 8px 20px; }
+.footer-links a:hover{ color: var(--accent); }
