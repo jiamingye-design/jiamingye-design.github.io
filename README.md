@@ -8,8 +8,9 @@ GitHub Pages 免费上线，手机和电脑都能访问。
 
 ```
 portfolio-site/
-├── index.html              About / 首页
-├── portfolio.html          作品集缩略图网格
+├── index.html              首页 = 作品集缩略图网格（网站入口）
+├── about.html               About / 个人简介
+├── portfolio.html          旧链接的跳转页（自动转到 index.html，可忽略）
 ├── project-example.html    单个项目详情页模板（复制它来新建项目）
 ├── publications.html       发表论文列表
 ├── news.html                动态 / 新闻
@@ -73,10 +74,13 @@ Custom domain 即可，GitHub 会给你 DNS 配置说明。
 
 ## 视觉设计说明（方便你理解/微调 `style.css`）
 
-- 背景：暖白纸色 `#F3F1EA`；文字：接近黑的墨色 `#18170F`
+- 背景：纯白 `#FFFFFF`；文字：接近黑的墨色 `#141414`
 - 强调色：克制的苔藓绿 `#3E5A45`，只用在 hover、当前页、标签上
 - 字体：标题用 **Fraunces**（有个性的衬线体），正文用 **Inter**，
   索引号/年份/分类标签用等宽字体 **IBM Plex Mono**
   （呼应"研究数据/索引"的学术感）
-- 版式参考了 lab-v.be / axellevertommen.be 的极简画廊风格：
-  左侧固定极简导航 + 大留白 + 图片为主角
+- 导航：不再是左侧栏，改成固定在**右上角**的一小簇文字链接（品牌名 + About /
+  Portfolio / Publications / News），没有分割线、没有背景色块，全站页面通用
+- 作品集网格：缩略图之间留出明显间距（`.portfolio-grid` 的 `gap`），
+  不再用色块/边框拼接成密铺网格，更接近 lab-v.be 的留白感
+- 首页现在直接展示 Portfolio；About 挪到了单独的 `about.html`

@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>你的名字 — About</title>
+<meta name="description" content="个人学术与作品集主页：简介、作品集与发表论文。">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<div class="shell">
+
+  <!-- ============ 右上角极简导航（每个页面重复一份，方便零构建部署） ============ -->
+  <header class="site-nav">
+    <a class="brand" href="index.html">你的名字</a>
+    <nav class="nav-links">
+      <a href="about.html" aria-current="page">About</a>
+      <a href="index.html">Portfolio</a>
+      <a href="publications.html">Publications</a>
+      <a href="news.html">News</a>
+    </nav>
+  </header>
+
+  <!-- ============ 主内容 ============ -->
+  <main>
+
+    <section class="hero">
+      <span class="hero-eyebrow">About</span>
+      <h1>你好，我是<br>你的名字。</h1>
+      <p class="hero-lede">
+        一句话简介：你是谁、在哪个机构做什么研究、你关心的问题。
+        例如——KU Leuven 建筑系博士生，研究方向为人机交互建筑 / 计算设计 /
+        （替换为你自己的研究领域）。
+      </p>
+    </section>
+
+    <div class="about-grid">
+      <div>
+        <p>
+          在这里写更详细的自我介绍段落：你的研究背景、教育经历、你如何走到现在这个方向，
+          以及你的作品集里这些项目分别探索了什么问题。可以分 2–3 段展开，
+          也可以像 alexbvdnguyen.com 那样，用简短的语言点出你的跨学科背景
+          （例如同时具备建筑实践与编程 / 数据 / 艺术的经验）。
+        </p>
+        <p>
+          第二段可以讲你目前在做的项目、感兴趣的合作方向，或者一句邀请语——
+          欢迎联系你进行合作、审稿、教学或展览方面的交流。
+        </p>
+
+        <div class="field-list">
+          <span class="field-tag">Human-Building Interaction</span>
+          <span class="field-tag">Computational Design</span>
+          <span class="field-tag">Digital Fabrication</span>
+          <span class="field-tag">替换为你的关键词</span>
+        </div>
+      </div>
+
+      <div class="about-photo">
+        [ 替换为你的照片 <br> 建议尺寸 4:5，例如 800×1000px ]
+      </div>
+    </div>
+
+    <section>
+      <div class="section-heading">
+        <span class="idx">—</span>
+        <h2>Experience</h2>
+      </div>
+      <ul style="display:flex; flex-direction:column; gap:14px; margin-bottom:56px;">
+        <li style="display:flex; justify-content:space-between; gap:16px; border-bottom:1px solid var(--line); padding-bottom:14px;">
+          <span>Postdoctoral Researcher · 你的机构</span>
+          <span class="pub-venue">2023 – now</span>
+        </li>
+        <li style="display:flex; justify-content:space-between; gap:16px; border-bottom:1px solid var(--line); padding-bottom:14px;">
+          <span>PhD Researcher · 你的机构</span>
+          <span class="pub-venue">2019 – 2023</span>
+        </li>
+        <li style="display:flex; justify-content:space-between; gap:16px;">
+          <span>替换为下一条经历</span>
+          <span class="pub-venue">年份</span>
+        </li>
+      </ul>
+    </section>
+
+    <footer class="site-footer">
+      <span>© <span id="year"></span> 你的名字</span>
+      <span class="footer-links">
+        <a href="mailto:you@example.com">you@example.com</a>
+        <a href="https://github.com/yourname" target="_blank" rel="noopener">GitHub</a>
+        <a href="#" target="_blank" rel="noopener">CV (PDF)</a>
+      </span>
+    </footer>
+  </main>
+</div>
+
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>

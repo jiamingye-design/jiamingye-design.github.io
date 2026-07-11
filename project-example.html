@@ -19,37 +19,20 @@
 
 <div class="shell">
 
-  <nav class="site-nav" id="siteNav">
-    <div>
-      <div class="brand">
-        <a href="index.html">
-          <span class="brand-name">你的名字</span>
-          <span class="brand-role">PhD Researcher · 研究方向</span>
-        </a>
-        <button class="nav-toggle" aria-expanded="false" aria-controls="navBody">Menu</button>
-      </div>
-      <div class="nav-body" id="navBody">
-        <div>
-          <ul class="nav-links">
-            <li><a href="index.html"><span class="nav-index">01</span>About</a></li>
-            <li><a href="portfolio.html" aria-current="page"><span class="nav-index">02</span>Portfolio</a></li>
-            <li><a href="publications.html"><span class="nav-index">03</span>Publications</a></li>
-            <li><a href="news.html"><span class="nav-index">04</span>News</a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-    <div class="nav-foot">
-      <div><a href="mailto:you@example.com">you@example.com</a></div>
-      <div><a href="https://github.com/yourname" target="_blank" rel="noopener">GitHub</a></div>
-      <div><a href="#" target="_blank" rel="noopener">CV (PDF)</a></div>
-    </div>
-  </nav>
+  <header class="site-nav">
+    <a class="brand" href="index.html">你的名字</a>
+    <nav class="nav-links">
+      <a href="about.html">About</a>
+      <a href="index.html" aria-current="page">Portfolio</a>
+      <a href="publications.html">Publications</a>
+      <a href="news.html">News</a>
+    </nav>
+  </header>
 
   <main>
 
     <div class="project-head">
-      <a class="back-link" href="portfolio.html">← 返回 Portfolio</a>
+      <a class="back-link" href="index.html">← 返回 Portfolio</a>
       <h1>示例项目名称</h1>
       <div class="project-meta-row">
         <div><strong>Year</strong>2025</div>
@@ -120,12 +103,17 @@
 
     <div class="project-nav">
       <a href="project-example.html">← Previous project</a>
-      <a href="portfolio.html">Index</a>
+      <a href="index.html">Index</a>
       <a href="project-example.html">Next project →</a>
     </div>
 
     <footer class="site-footer">
-      © <span id="year"></span> 你的名字 · 本站由 GitHub Pages 免费托管
+      <span>© <span id="year"></span> 你的名字</span>
+      <span class="footer-links">
+        <a href="mailto:you@example.com">you@example.com</a>
+        <a href="https://github.com/yourname" target="_blank" rel="noopener">GitHub</a>
+        <a href="#" target="_blank" rel="noopener">CV (PDF)</a>
+      </span>
     </footer>
   </main>
 </div>
